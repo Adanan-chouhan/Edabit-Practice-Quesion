@@ -55,7 +55,7 @@ function maxNum(num1, num2) {
 // console.log(maxNum(-1, 0));          // 0
 // console.log(maxNum(1000, 400));          // 1000
 
-// 7. List of Multiples
+// 25 ==> List of Multiples
 // Create a function that takes two numbers as arguments (num, length) and returns a list of multiples of num until the list length reaches length.
 
 function list_of_multiples(num, length) {
@@ -66,9 +66,80 @@ function list_of_multiples(num, length) {
     return res;
 }
 
-copnsole.log(list_of_multiples(7, 5));         //[7, 14, 21, 28, 35]
-copnsole.log(list_of_multiples(12, 10));         //[12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
-copnsole.log(list_of_multiples(17, 6));         //[17, 34, 51, 68, 85, 102]
+// copnsole.log(list_of_multiples(7, 5));         //[7, 14, 21, 28, 35]
+// copnsole.log(list_of_multiples(12, 10));         //[12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+// copnsole.log(list_of_multiples(17, 6));         //[17, 34, 51, 68, 85, 102]
 
-// Notes
-// Notice that num is also included in the returned list.
+// 26 ==> Pair Management
+// Given two arguments, return an array which contains these two arguments.
+function makePair(num1){
+const res = [num1,num2];
+return res;
+}
+
+// console.log(makePair(1, 2));    //  [1, 2]
+// console.log(makePair(51, 21));    //  [51, 21]
+// console.log(makePair(512124, 215));    //  [512124, 215]
+
+// 27 ==> Compare Strings by Count of Characters
+// Create a function that takes two strings as arguments and return either true or false depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
+function comp(str1,str2){
+//   if(str1.length === str2.length){
+//     return true;
+// }else{
+//     return false;
+// }
+
+return str1.length === str2.length ? true : false;
+}
+
+// console.log(comp("AB", "CD"));    //  true
+// console.log(comp("ABC", "DE"));    //  false
+// console.log(comp("hello", "edabit"));    //  false
+
+// 28 ==> Is the String Empty?
+// Create a function that returns true if a string is empty and false otherwise.
+
+function isEmpty(str){
+// if(str === ""){
+//     return true;
+// }
+// else{
+//     return false;
+// }
+return str === "" ? true : false;
+}
+
+// console.log(isEmpty(""));       // true
+// console.log(isEmpty(" "));       // false
+// console.log(isEmpty("a"));       // false
+
+// 29 ==> Check if an Integer is Divisible By Five
+// Create a function that returns true if an integer is evenly divisible by 5, and false otherwise.
+
+function divisibleByFive(num){
+if(num % 5 === 0){
+    return true;
+}
+else{
+    return false;
+}
+}
+// console.log(divisibleByFive(5));        //  true
+// console.log(divisibleByFive(-55));        //  true
+// console.log(divisibleByFive(37));        //  false
+
+// 30 ==> Multiple of 100
+// Create a function that takes an integer and returns true if it's divisible by 100, otherwise return false.
+function divisible(num){
+    if(num % 100 === 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+// console.log(divisible(1));  // false
+// console.log(divisible(1000));  // true
+// console.log(divisible(100));  // true
