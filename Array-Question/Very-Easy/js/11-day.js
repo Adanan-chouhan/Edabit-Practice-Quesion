@@ -153,19 +153,160 @@ function evenOddPartition(arr) {
 // 118 => Fix the Error: Mutating Arrays
 // Suppose I want to define a function that removes the last element of an array each time I call it, but does not mutate the original array. Fix the code so that the results are no longer mutating the array.
 
-// function minusOne(arr) {
-//   arr.pop()
-//   return arr
-// }
+function minusOne(arr) {
+   let arrCopy = arr.slice();
+  arrCopy.pop()
+  return arrCopy;
+}
 // Examples
-// x = [1, 2, 3, 4, 5]
-// minusOne(x) ➞ [1, 2, 3, 4]  // 1st time function is called.
-// minusOne(x) ➞ [1, 2, 3]  // 2nd time function is called.
-// minusOne(x) ➞ [1, 2]  // 3rd time function is called.
-// minusOne(x) ➞ [1]  // 4th time function is called.
+x = [1, 2, 3, 4, 5]
+// minusOne(x));       //  [1, 2, 3, 4]  // 1st time function is called.
+// minusOne(x));       //  [1, 2, 3]  // 2nd time function is called.
+// minusOne(x));       //  [1, 2]  // 3rd time function is called.
+// minusOne(x));       //  [1]  // 4th time function is called.
 
 // // What I want instead:
-// minusOne(x) ➞ [1, 2, 3, 4]  // 1st time function is called.
-// minusOne(x) ➞ [1, 2, 3, 4]  // 2nd time function is called.
-// minusOne(x) ➞ [1, 2, 3, 4]  // 3rd time function is called.
-// minusOne(x) ➞ [1, 2, 3, 4]  // 4th time function is called.
+// console.log(minusOne(x)); // [1, 2, 3, 4]  // 1st time function is called.
+// console.log(minusOne(x)); // [1, 2, 3, 4]  // 2nd time function is called.
+// console.log(minusOne(x)); // [1, 2, 3, 4]  // 3rd time function is called.
+// console.log(minusOne(x)); // [1, 2, 3, 4]  // 4th time function is called.
+
+// 119 => Check Factors
+// Write a function that returns true if all integers in an array are factors of a number, and false otherwise.
+
+function checkFactors(arr,factor){
+    for(let i = 0; i < arr.length; i++){
+        if (factor % arr[i] !== 0) {
+            return false;
+        }
+    }
+    return true;
+    }
+
+
+// console.log(checkFactors([2, 3, 4], 12));       //  true
+// Since 2, 3, and 4 are all factors of 12.
+
+// console.log(checkFactors([1, 2, 3, 8], 12));       //  false
+// 8 is not a factor of 12.
+
+// console.log(checkFactors([1, 2, 50], 100));       //  true
+
+// console.log(checkFactors([3, 6], 9));       //  false
+
+// 120 => Get the File Extension
+// Write a function that maps files to their extension names.
+
+function getExtension(arr){
+    let result = [];
+    for(let  i = 0; i < arr.length; i++){
+        let parts = arr[i].split('.');
+        if(parts.length > 1){
+            result.push(parts.pop());
+        }
+    }
+    return result;
+}
+
+console.log(getExtension(["code.html", "code.css"]));  // ["html", "css"]
+console.log(getExtension(["project1.jpg", "project1.pdf", "project1.mp3"]));  // ["jpg", "pdf", "mp3"]
+console.log(getExtension(["ruby.rb", "cplusplus.cpp", "python.py", "javascript.js"]));  // ["rb", "cpp", "py", "js"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
