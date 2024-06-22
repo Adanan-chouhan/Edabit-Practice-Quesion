@@ -123,3 +123,38 @@ console.log(binary(5));  // "101"
 
 console.log(binary(10))  // "1010"
 // 1*2 + 1*8 = 10 
+
+
+// 8 =>
+// function capToFront(str){
+//     let upperCase = "";
+//     let lowerCase = "";
+
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] === str[i].toUpperCase()) {
+//             upperCase += str[i];
+//         } else {
+//          lowerCase += str[i];
+//         }
+//     }
+
+//     return upperCase + lowerCase;
+// }
+
+// console.log(capToFront("hApPy")); // "APhpy"
+// console.log(capToFront("moveMENT")); // "MENTmove"
+// console.log(capToFront("shOrtCAKE")); // "OCAKEshrt"
+
+// 9 => 
+function  reverseWords(str){
+    let result = [];
+let words = str.split(" ");
+for(let i = words.length-1; i >= 0; i--){
+result.push(words[i]);
+}
+return result.join(" ").trim();
+}
+
+console.log(reverseWords(" the sky is blue")); // "blue is sky the"
+console.log(reverseWords("hello   world!  ")); // "world! hello"
+console.log(reverseWords("a good example")); // "example good a"
