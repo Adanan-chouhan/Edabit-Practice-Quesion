@@ -156,8 +156,8 @@ function fiftyThirtyTwenty(ati){
 // Given two arrays, which represent two sandwiches, return whether both sandwiches use the same type of bread. The bread will always be found at the start and end of the array.
 
 function hasSameBread(sandwiches1,sandwiches2){
- return  sandwiches1[0] == sandwiches2[0]  &&  sandwiches1[2] == sandwiches2[2] ? true : false;
-// if(sandwiches1[0] == sandwiches2[0] && sandwiches1[2] == sandwiches2[2]){
+ return  sandwiches1[0] === sandwiches2[0]  &&  sandwiches1[sandwiches1.length-1] === sandwiches2[sandwiches1.length-1] ? true : false;
+// if(sandwiches1[0] === sandwiches2[0] && sandwiches1[2] === sandwiches2[2]){
 //    return true
 // }
 // return false;
