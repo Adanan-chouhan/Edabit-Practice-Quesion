@@ -111,9 +111,9 @@ function cityFacts(obj) {
 // Create a function that takes in a word and determines whether or not it is plural. A plural word is one that ends in "s".
 
 function isPlural(word) {
-// return word.endsWith("s");
+  // return word.endsWith("s");
 
-return word[word.length-1] === "s";
+  return word[word.length - 1] === "s";
 
   // let result = word[word.length - 1]
   // if (result === "s") {
@@ -131,15 +131,15 @@ return word[word.length-1] === "s";
 // 27 => Concatenating First and Last Character of a String
 // Create a function that takes a string and returns the concatenated first and last character.
 
-function firstLast(str){
+function firstLast(str) {
   // let result = str[0];
   // return result += str[str.length-1]
 
   // return str[0] + str[str.length-1]
 
   let result = "";
-  for(let i = 0; i < str.length; i++){
-    if(i === 0 || i === str.length-1){
+  for (let i = 0; i < str.length; i++) {
+    if (i === 0 || i === str.length - 1) {
       result += str[i]
     }
   }
@@ -155,22 +155,45 @@ function firstLast(str){
 // 28 => Stuttering Function
 // Write a function that stutters a word as if someone is struggling to read it. The first two letters are repeated twice with an ellipsis ... and space after each, and then the word is pronounced with a question mark ?.
 
-function stutter(str){
-  let firstTwoLatter = str.slice(0,2)
+function stutter(str) {
+  let firstTwoLatter = str.slice(0, 2)
   return `${firstTwoLatter}... ${firstTwoLatter}... ${str}? `;
 }
 
-console.log(stutter("incredible"));       //  "in... in... incredible?"
-console.log(stutter("enthusiastic"));       //  "en... en... enthusiastic?"
-console.log(stutter("outstanding"));       //  "ou... ou... outstanding?"
+// console.log(stutter("incredible"));       //  "in... in... incredible?"
+// console.log(stutter("enthusiastic"));       //  "en... en... enthusiastic?"
+// console.log(stutter("outstanding"));       //  "ou... ou... outstanding?"
 
 // 29 => Fraction Greater Than One
 // Given a fraction as a string, return whether or not it is greater than 1 when evaluated.
 
-function greaterThanOne(str){
-  
+function greaterThanOne(str) {
+  let result = eval(str);
+  if (result > 1) {
+    return true
+  }
+  return false;
+
+  // return eval(str) > 1 ? true : false;
 }
 
-console.log(greaterThanOne("1/2"));       // false
-console.log(greaterThanOne("7/4"));        // true
-console.log(greaterThanOne("10/10"));       // false
+// console.log(greaterThanOne("1/2"));       // false
+// console.log(greaterThanOne("7/4"));        // true
+// console.log(greaterThanOne("10/10"));       // false
+
+// 30 => Default Mood
+// Create a function that takes in a current mood and return a sentence in the following format: "Today, I am feeling {mood}". However, if no argument is passed, return "Today, I am feeling neutral".
+
+function moodToday(str){
+  if(arguments.length === 0){
+    return `Today, I am feeling neutral`
+  }
+  return `Today, I am feeling ${str}`
+
+  // return arguments.length === 0 ? "Today, I am feeling netural" : `Today, I am feeling ${str}`;
+
+}
+
+// console.log(moodToday("happy"));            //   "Today, I am feeling happy"
+// console.log(moodToday("sad"));            //   "Today, I am feeling sad"
+// console.log(moodToday());            //   "Today, I am feeling neutral"
