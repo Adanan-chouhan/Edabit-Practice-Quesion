@@ -169,24 +169,68 @@ function getCase(str) {
 function add(str1, str2) {
     let putValue = str1;
     let word = str2.trim().split(" ");  // leading or trailing spaces ko handle karega
-    
+
     // Agar string mein sirf spaces hoon
     if (word[0] === "") {
-      return putValue;
+        return putValue;
     }
-  
+
     // Agar sirf ek word ho
     if (word.length === 1) {
-      return `${word[0]}${putValue}`;
+        return `${word[0]}${putValue}`;
     }
-  
+
     // Agar do ya zyada words ho
     return `${word[0]}${putValue}${word[1]}${putValue}${word[word.length - 1]}`;
-  }
+}
 
-console.log(add("R", "javascript is fun"));          //  "javascriptRisRfun"
-console.log(add("#", "hello world!"));          //  "hello#world!"
-console.log(add("#", " "));          //  "#"
+// console.log(add("R", "javascript is fun"));          //  "javascriptRisRfun"
+// console.log(add("#", "hello world!"));          //  "hello#world!"
+// console.log(add("#", " "));          //  "#"
 
+// 49 => The Study of Wumbology
+// Create a function that flips M's to W's (all uppercase).
 
+function wumbo(str) {
+    // let result = str.replace("M","W");
+    // return result;
 
+    let result = "";
+    for (let i = 0; i < str.length; i++) {
+        if (str[i].includes("M")) {
+            result += "W";
+        }
+        else {
+            result += str[i]
+        }
+    }
+    return result;
+}
+
+// console.log(wumbo("I LOVE MAKING CHALLENGES"));       //  "I LOVE WAKING CHALLENGES"
+// console.log(wumbo("MEET ME IN WARSAW"));       //  "WEET WE IN WARSAW"
+// console.log(wumbo("WUMBOLOGY"));       //  "WUWBOLOGY"
+
+// 50 => Scottish Screaming
+// A strong Scottish accent makes every vowel similar to an "e", so you should replace every vowel with an "e". Additionally, it is being screamed, so it should be in block capitals.
+// Create a function that takes a string and returns a string.
+
+function toScottishScreaming(str) {
+    // let result = str.replace("o","E").toUpperCase();
+    // return result;
+
+    let result = "";
+    for (let i = 0; i < str.length; i++) {
+        if (str[i].includes("o")) {
+            result += "E";
+        }
+        else {
+            result += str[i].toUpperCase();
+        }
+    }
+    return result;
+}
+
+// console.log(toScottishScreaming("hello world"));      //  "HELLE WERLD"
+// console.log(toScottishScreaming("Mr. Fox was very naughty"));      //  "MR. FEX WES VERY NEEGHTY"
+// console.log(toScottishScreaming("Butterflies are beautiful!"));      //  "BETTERFLEES ERE BEEETEFEL!"
