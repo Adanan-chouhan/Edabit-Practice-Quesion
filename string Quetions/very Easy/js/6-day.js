@@ -129,12 +129,102 @@ function secret(tag) {
 
     const [tagName, count] = tag.split('*');
     for (let i = 1; i <= count; i++) {
-   res.push((`<${tagName}></${tagName}>`))
+        res.push((`<${tagName}></${tagName}>`))
     }
 
     return res.join("")
 }
 
-console.log(secret("div*2"));   //  "<div></div><div></div>" 
-console.log(secret("p*1"));   //  "<p></p>"
-console.log(secret("li*3"));   //  "<li></li><li></li><li></li>"
+// console.log(secret("div*2"));   //  "<div></div><div></div>" 
+// console.log(secret("p*1"));   //  "<p></p>"
+// console.log(secret("li*3"));   //  "<li></li><li></li><li></li>"
+
+// 58 => YouTube Upload Count
+// You are given an array of dates in the format Dec 11 and a monthin the format Dec as arguments. Each date represents a video that was uploaded on that day. Return the number of uploads for a given month.
+
+// function uploadCount(arr,month){
+// let count = 0;
+
+// for(let date of arr){
+//     if(date.startsWith(month)){
+//         count++
+//     };
+// }
+// return count;
+// }
+
+// function uploadCount(arr, month) {
+//     let count = 0;
+//     for (let i = 0; i < arr.length; i++){
+//         if(arr[i].includes(month)){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+function uploadCount(arr, month) {
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        let date = arr[i].split(" ");
+        if (date[0] === month) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// console.log(uploadCount(["Sept 22", "Sept 21", "Oct 15"], "Sept"));    //  2
+// console.log(uploadCount(["Sept 22", "Sept 21", "Oct 15"], "Oct"));    //  1
+
+// 59 => The Forbidden Letter
+// Given a letter and an array of words, return whether the letter does not appear in any of the words.
+
+function forbiddenLetter(letter, words) {
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].includes(letter)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// console.log(forbiddenLetter("r", ["rock", "paper", "scissors"]));     //  false
+// console.log(forbiddenLetter("a", ["spoon", "fork", "knife"]));     //  true
+// console.log(forbiddenLetter("m", []));     //  true
+
+// 60 => Calculate Using String Operation
+// Create a function that takes two numbers and a mathematical operator and returns the result.
+
+// function calculate(num1,num2,operator){
+// let result = eval(num1 + operator + num2);
+// return result;
+// }
+
+function calculate(num1, num2, operator) {
+    let result;
+
+    switch (operator) {
+        case "+": result = num1 + num2;
+            break;
+        case "-": result = num1 - num2;
+            break;
+        case "*": result = num1 * num2;
+            break;
+        case "/": result = num1 / num2;
+            break;
+        case "%": result = num1 % num2;
+            break;
+        default:
+            throw new Error("Invalid operator");
+    }
+    return result;
+}
+
+// console.log(calculate(4, 9, "+"));      //  13
+// console.log(calculate(12, 5, "-"));      //  7
+// console.log(calculate(6, 3, "*"));      //  18
+// console.log(calculate(25, 5, "/"));      //  5
+// console.log(calculate(14, 3, "%"));      //  2
+
