@@ -48,17 +48,13 @@ function countWords(str) {
 // Write a function that takes an array of strings and a pattern (string) and returns the strings that contain the pattern in alphabetical order. If the pattern is an empty string, return all the strings passed in the input array.
 
 function cmsSelector(arr, pattern) {
-    if (pattern === "") {
-        return arr.sort((a, b) => a.localeCompare(b));
-    }
-
     let result = []
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].toLowerCase().includes(pattern.toLowerCase())) {
             result.push(arr[i]);
         }
     }
-    return result.sort((a, b) => a.localeCompare(b));
+    return result.sort();
 }
 
 // console.log(cmsSelector(["WordPress", "Joomla", "Drupal"], "w"));     //  ["WordPress"]
@@ -105,7 +101,7 @@ function filterString(str) {
 
 // 76 =>
 function birthdayCakeCandles(arr) {
-    let maxHeight = Math.max(...arr); 
+    let maxHeight = Math.max(...arr);
     let countMaxCandles = 0;
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] === maxHeight) {
@@ -120,3 +116,129 @@ function birthdayCakeCandles(arr) {
 // // There are two of them, so you return 2.
 // console.log(birthdayCakeCandles([3, 2, 1, 3])); // 2
 // console.log(birthdayCakeCandles([82, 49, 82, 82, 41, 82, 15, 63, 38, 25])); // 4
+
+// 77 =>  Broken Keyboard
+// Given what is supposed to be typed and what is actually typed, write a function that returns the broken key(s). The function looks like:
+
+// findBrokenKeys(correct phrase, what you actually typed)
+// Examples
+
+function findBrokenKeys(str1, str2) {
+    let result = []
+    for (let i = 0; i < str1.length; i++) {
+        if (!str1[i].includes(str2[i])) {
+            if (result.indexOf(str1[i]) === -1)
+                result.push(str1[i]);
+        }
+    }
+    return result;
+}
+
+// console.log(findBrokenKeys("happy birthday", "hawwy birthday"));       //  ["p"]
+// console.log(findBrokenKeys("starry night", "starrq light"));       //  ["y", "n"]
+// console.log(findBrokenKeys("beethoven", "affthoif5"));       //  ["b", "e", "v", "n"]
+
+// 78 => Hot Pics of Danny DeVito!
+// I'm trying to watch some lectures to study for my next exam but I keep getting distracted by meme compilations, vine compilations, anime, and more on my favorite video platform.
+
+// Your job is to help me create a function that takes a string and checks to see if it contains the following words or phrases:
+
+// "anime"
+// "meme"
+// "vines"
+// "roasts"
+// "Danny DeVito"
+// If it does, return "NO!". Otherwise, return "Safe watching!".
+
+// function preventDistractions(str){
+//     let words = str.split(" ")
+//    for(let i = 0; i < words.length; i++){
+//     if(words[i] === "anime"){
+//         return "NO!";
+//     }
+//     else if(words[i] === "meme"){
+//         return "NO!";
+//     }
+//     else if(words[i] === "vines"){
+//         return "NO!";
+//     }
+//     else if(words[i] === "roasts"){
+//         return "NO!";
+//     }
+//     else if(words[i] === "Danny"  || words[i] === "DeVito"){
+//         return "NO!"
+//     }
+//    }
+//    return  "Safe watching!"
+
+// }
+
+function preventDistractions(str) {
+    let words = str.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        switch (words[i]) {
+            case "anime":
+                return "NO!"
+            case "meme":
+                return "NO!"
+            case "vines":
+                return "NO!"
+            case "roasts":
+                return "NO!"
+            case "Danny" || "DeVito":
+                return "NO!"
+
+        }
+    }
+    return "Safe watching";
+}
+
+
+// console.log(preventDistractions("vines that butter my eggroll"));    //  "NO!"
+// console.log(preventDistractions("Hot pictures of Danny DeVito"));    //  "NO!"
+// console.log(preventDistractions("How to ace BC Calculus in 5 Easy Steps"));    //  "Safe watching!"
+
+// 79 => Count the Capital Letters
+// Given a string of letters, how many capital letters are there?
+
+// function capitalLetters(str) {
+//     let count = 0
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] === str[i].toUpperCase()) {
+//             count++
+//         }
+//     }
+//     return count;
+// }
+
+function capitalLetters(str) {
+    let count = 0;
+    let words = str.split("");
+    words.forEach((char) => {
+        if (char >= "A" && char <= "Z") {
+            count++
+        }
+    });
+    return count;
+}
+
+// console.log(capitalLetters("fvLzpxmgXSDrobbgMVrc"));  //  6
+// console.log(capitalLetters("JMZWCneOTFLWYwBWxyFw"));  //  14
+// console.log(capitalLetters("mqeytbbjwqemcdrdsyvq"));  //  0
+
+// 70 => Count Syllables
+// Create a function that counts the number of syllables a word has. Each syllable is separated with a dash -.
+
+function numberSyllables(str) {
+    let count = 0;
+    let words = str.split("-");
+    for (let i = 0; i < words.length; i++) {
+        count++;
+    }
+    return count;
+}
+
+console.log(numberSyllables("buf-fet"));       //  2
+console.log(numberSyllables("beau-ti-ful"));       //  3
+console.log(numberSyllables("mon-u-men-tal"));       //  4
+console.log(numberSyllables("on-o-mat-o-poe-ia"));       //  6
