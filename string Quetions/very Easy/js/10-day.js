@@ -168,10 +168,10 @@ function Go(num) {
 // 98 => Reverse and Capitalize
 // Create a function that takes a string of lowercase characters and returns that string reversed and in upper case.
 
-function reverseCapitalize(str){
+function reverseCapitalize(str) {
     let result = "";
-    for(let i = str.length-1; i >= 0; i--){
-     result += str[i].toUpperCase();
+    for (let i = str.length - 1; i >= 0; i--) {
+        result += str[i].toUpperCase();
     }
     return result;
 }
@@ -183,14 +183,14 @@ function reverseCapitalize(str){
 // 99 => Little Dictionary
 // Create a function that takes an initial word and extracts any words that start with the same letters as the initial word.
 
-function dictionary(initial,words){
-let result = [];
-for(let i = 0; i < words.length; i++){
-    if(words[i].includes(initial)){
-        result.push(words[i]);
+function dictionary(initial, words) {
+    let result = [];
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].includes(initial)) {
+            result.push(words[i]);
+        }
     }
-}
-return result;
+    return result;
 }
 
 // console.log(dictionary("bu", ["button", "breakfast", "border"]));  //  ["button"]
@@ -200,9 +200,16 @@ return result;
 // 100 => Check if String Ending Matches Second String
 // Create a function that takes two strings and returns true if the first string ends with the second string; otherwise return false.
 
-function checkEnding(str1,str2){
-let result = str1.endsWith(str2);
-return result;   
+function checkEnding(str1, str2) {
+    // let result = str1.endsWith(str2);
+    // return result; 
+
+    for (let i = 0; i < str2.length; i++) {
+            if (str1[str1.length - str2.length + i] !== str2[i]) {
+                return false;
+        }
+    }
+    return true;
 }
 
 // console.log(checkEnding("abc", "bc"));           //  true
