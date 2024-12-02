@@ -167,11 +167,61 @@ function repeat(str, num) {
 
 // Let's say we wanted to change the number of pages that Google could skip to. Create a function where given a number of pages n, return the word "Google" but with the correct number of "o"s.
 
-function googlify(num){
-    
+function googlify(num) {
+    if (num < 0) {
+        return "invalid";
+    }
+
+    let str = "G";
+    for (let i = 0; i < num; i++) {
+        str += "o";
+    }
+    return str += "gle";
 }
 
-console.log(googlify(10));   //  "Goooooooooogle"
-console.log(googlify(23));   //  "Gooooooooooooooooooooooogle"
-console.log(googlify(2));   //  "Google"
-console.log(googlify(-2));   //  "invalid"
+// console.log(googlify(10));   //  "Goooooooooogle"
+// console.log(googlify(23));   //  "Gooooooooooooooooooooooogle"
+// console.log(googlify(2));   //  "Google"
+// console.log(googlify(-2));   //  "invalid"
+
+//  109 => Get the File Extension
+// Write a function that maps files to their extension names.
+
+function getExtension(arr){
+    let result = [];
+    for(let i = 0; i < arr.length; i++){
+       let extension = arr[i].split(".").pop();
+       result.push(extension);
+    }s
+    return result;
+}
+
+console.log(getExtension(["code.html", "code.css"]));
+//  ["html", "css"]
+
+console.log(getExtension(["project1.jpg", "project1.pdf", "project1.mp3"]));
+//  ["jpg", "pdf", "mp3"]
+
+console.log(getExtension(["ruby.rb", "cplusplus.cpp", "python.py", "javascript.js"]));
+//  ["rb", "cpp", "py", "js"]
+
+
+// 110 => 
+function deNest(arr) {
+    if (!Array.isArray(arr)) {
+        return arr;
+    }
+    // Recursive case: Call deNest on the first element of the array
+    return deNest(arr[0]);
+}
+
+
+function deNest(arr) {
+    if (!Array.isArray(arr)) {
+        return arr;
+    }
+    return deNest(arr[0]);
+}
+// console.log(deNest([[[[[[[[[[[[3]]]]]]]]]]]]));// 3
+// console.log(deNest([[[[[[[true]]]]]]]));// true
+// console.log(deNest([[[[[[[[[[[[[[[[["edabit"]]]]]]]]]]]]]]]]]));// "edabit"

@@ -228,3 +228,4 @@ function calculate(num1, num2, operator) {
 // console.log(calculate(25, 5, "/"));      //  5
 // console.log(calculate(14, 3, "%"));      //  2
 
+ 
