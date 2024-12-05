@@ -83,13 +83,13 @@ let emp3 = new Employee("Antony", "Walker")
 // 115 => Total Number of Unique Characters
 // Given two strings, create a function that returns the total number of unique characters from the combined string.
 
-function countUnique(str1,str2){
+function countUnique(str1, str2) {
     let combined = str1 + str2;
     let uniqueChars = [];
-    for(let i = 0; i < combined.length; i++){
-       if(!uniqueChars.includes(combined[i])){
-        uniqueChars.push(combined[i]);
-       }
+    for (let i = 0; i < combined.length; i++) {
+        if (!uniqueChars.includes(combined[i])) {
+            uniqueChars.push(combined[i]);
+        }
     }
     return uniqueChars.length;
 }
@@ -132,10 +132,10 @@ function countUnique(str1,str2){
 // }
 
 
-function greetPeople(arr){
-    return arr.reduce((result,name) => {
+function greetPeople(arr) {
+    return arr.reduce((result, name) => {
         return result ? `${result} Hello ${name}` : `Hello ${name}`
-    },"")
+    }, "")
 }
 
 // console.log(greetPeople(["Joe"]));    //  "Hello Joe"
@@ -147,23 +147,35 @@ function greetPeople(arr){
 
 // firstAndLast(string);   //  [first, last]
 
-function firstAndLast(str){
-let words = str.split("");    
-let result = [];
-let sort  = [];
-let reverse = [];
-for(let i = 0; i < words.length; i++){
-  sort.push(words[i].sort().join(""));
+function firstAndLast(str) {
+    let chars = str.split("");
+    let first = chars.slice().sort().join("");
+    let last = chars.slice().sort().reverse().join("");
+    return [first, last];
 
-for(let j = words.length-1; j>= 0; j--){
-    reverse.push(words[i]);
-}
-}
-result.push(sort,reverse)
-
-return result;
 }
 
-console.log(firstAndLast("marmite"));   //  ["aeimmrt", "trmmiea"]
-console.log(firstAndLast("bench"));   //  ["bcehn", "nhecb"]
-console.log(firstAndLast("scoop"));   //  ["coops", "spooc"]
+// console.log(firstAndLast("marmite"));   //  ["aeimmrt", "trmmiea"]
+// console.log(firstAndLast("bench"));   //  ["bcehn", "nhecb"]
+// console.log(firstAndLast("scoop"));   //  ["coops", "spooc"]
+
+// 118 => Re-Form the Word
+// A word has been split into a left part and a right part. Re-form the word by adding both halves together, changing the first character to an uppercase letter.
+
+// function getWord(str1, str2) {
+//     let result = str1.concat(str2);
+//     return result.slice(0, 1).toUpperCase() + result.slice(1);
+// }
+
+function getWord(str1, str2) {
+    let result = str1.slice(0, 1).toUpperCase();
+    for (let i = 1; i < str1.length; i++) {
+        result += str1[i];
+    }
+    return result.concat(str2);
+}
+
+console.log(getWord("seas", "onal"));   //  "Seasonal"
+console.log(getWord("comp", "lete"));   //  "Complete"
+console.log(getWord("lang", "uage"));   //  "Language"
+
